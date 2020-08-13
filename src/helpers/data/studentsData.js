@@ -3,6 +3,7 @@ const students = [
     studentId: 'student1',
     firstName: 'Jeremiah',
     lastName: 'Vasquez',
+    imgUrl: 'https://avatars1.githubusercontent.com/u/56455496?v=4',
     isDead: false,
   },
   {
@@ -147,30 +148,36 @@ const students = [
   },
 ];
 
-const livingStudents = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId && response.isDead === false) {
-      return students;
-    }
-    return false;
-  });
-};
+const livingStudents = () => {
+  const aliveStudents = [];
 
-const dearlyBeloved = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId && response.isDead === true) {
-      return students;
-    }
-    return false;
-  });
-};
-
-const followTheLight = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = true;
+  students.forEach((student) => {
+    if (student.isDead === false) {
+      aliveStudents.push(student);
     }
   });
+  return aliveStudents;
 };
 
-export default { livingStudents, dearlyBeloved, followTheLight };
+// const dearlyBeloved = (studentId) => {
+//   students.forEach((response) => {
+//     if (response.id === studentId && response.isDead === false) {
+//       return response;
+//     }
+//     return false;
+//   });
+// };
+
+// const followTheLight = (studentId) => {
+//   students.forEach((response) => {
+//     if (response.id === studentId) {
+//       response.isDead = false;
+//     }
+//   });
+// };
+
+export default {
+  livingStudents,
+  // dearlyBeloved,
+  // followTheLight,
+};
