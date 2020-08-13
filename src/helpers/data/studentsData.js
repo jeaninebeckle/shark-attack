@@ -123,28 +123,28 @@ const students = [
     firstName: 'Pete',
     lastName: 'Stewart',
     imgUrl: 'https://avatars2.githubusercontent.com/u/62906411?v=4',
-    isDead: true,
+    isDead: false,
   },
   {
     studentId: 'student19',
     firstName: 'Ponch',
     lastName: 'Sihanorak',
     imgUrl: 'https://avatars0.githubusercontent.com/u/61893644?v=4',
-    isDead: true,
+    isDead: false,
   },
   {
     studentId: 'student20',
     firstName: 'Ryan',
     lastName: 'Beiden',
     imgUrl: 'https://avatars2.githubusercontent.com/u/25331401?v=4',
-    isDead: true,
+    isDead: false,
   },
   {
     studentId: 'student21',
     firstName: 'Billy',
     lastName: 'Campbell',
     imgUrl: 'https://avatars0.githubusercontent.com/u/62917622?v=4',
-    isDead: true,
+    isDead: false,
   },
 ];
 
@@ -155,14 +155,13 @@ const livingStudents = () => {
     if (student.isDead === false) {
       aliveStudents.push(student);
     }
-    console.warn(aliveStudents);
-    return aliveStudents;
   });
+  return aliveStudents;
 };
 
 // const dearlyBeloved = (studentId) => {
 //   students.forEach((response) => {
-//     if (response.id === studentId && response.isDead === true) {
+//     if (response.id === studentId && response.isDead === false) {
 //       return response;
 //     }
 //     return false;
@@ -172,7 +171,7 @@ const livingStudents = () => {
 // const followTheLight = (studentId) => {
 //   students.forEach((response) => {
 //     if (response.id === studentId) {
-//       response.isDead = true;
+//       response.isDead = false;
 //     }
 //   });
 // };
