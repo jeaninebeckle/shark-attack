@@ -160,25 +160,25 @@ const livingStudents = () => {
   });
 };
 
-const dearlyBeloved = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId && response.isDead === true) {
-      return response;
-    }
-    return false;
-  });
-};
+// const dearlyBeloved = (studentId) => {
+//   students.forEach((response) => {
+//     if (response.id === studentId && response.isDead === true) {
+//       return response;
+//     }
+//     return false;
+//   });
+// };
 
-const followTheLight = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = true;
-    }
-  });
-};
+// const followTheLight = (studentId) => {
+//   students.forEach((response) => {
+//     if (response.id === studentId) {
+//       response.isDead = true;
+//     }
+//   });
+// };
 
 export default {
   livingStudents,
-  dearlyBeloved,
-  followTheLight,
+  // dearlyBeloved,
+  // followTheLight,
 };
