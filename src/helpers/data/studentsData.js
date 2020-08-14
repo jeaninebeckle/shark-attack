@@ -81,56 +81,56 @@ const students = [
     firstName: 'Matt',
     lastName: 'Logan',
     imgUrl: 'https://avatars1.githubusercontent.com/u/62910269?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student13',
     firstName: 'Michael',
     lastName: 'Dotson',
     imgUrl: 'https://avatars3.githubusercontent.com/u/61854037?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student14',
     firstName: 'Nate',
     lastName: 'Owens',
     imgUrl: 'https://avatars2.githubusercontent.com/u/62910227?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student15',
     firstName: 'Nick',
     lastName: 'Walters',
     imgUrl: 'https://avatars3.githubusercontent.com/u/10491407?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student16',
     firstName: 'Nikhil',
     lastName: 'Gaikwad',
     imgUrl: 'https://avatars1.githubusercontent.com/u/18632556?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student17',
     firstName: 'Ola',
     lastName: 'Oladinni',
     imgUrl: 'https://avatars0.githubusercontent.com/u/59629698?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student18',
     firstName: 'Pete',
     lastName: 'Stewart',
     imgUrl: 'https://avatars2.githubusercontent.com/u/62906411?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student19',
     firstName: 'Ponch',
     lastName: 'Sihanorak',
     imgUrl: 'https://avatars0.githubusercontent.com/u/61893644?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student20',
@@ -167,20 +167,26 @@ const dearlyBeloved = () => {
       deadStudents.push(student);
     }
   });
-  console.warn(deadStudents);
   return deadStudents;
 };
 
+const sharkAttack = () => {
+  const random = Math.floor(Math.random() * livingStudents().length);
+  const value = livingStudents()[random];
+  return value.studentId;
+};
+
 const followTheLight = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = true;
-    }
-  });
+  const random = Math.floor(Math.random() * livingStudents().length);
+  const value = livingStudents()[random];
+  if (value.studentId === studentId) {
+    livingStudents().isDead = true;
+  }
 };
 
 export default {
   livingStudents,
   dearlyBeloved,
+  sharkAttack,
   followTheLight,
 };
