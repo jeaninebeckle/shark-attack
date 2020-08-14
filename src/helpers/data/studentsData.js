@@ -137,14 +137,14 @@ const students = [
     firstName: 'Ryan',
     lastName: 'Beiden',
     imgUrl: 'https://avatars2.githubusercontent.com/u/25331401?v=4',
-    isDead: false,
+    isDead: true,
   },
   {
     studentId: 'student21',
     firstName: 'Billy',
     lastName: 'Campbell',
     imgUrl: 'https://avatars0.githubusercontent.com/u/62917622?v=4',
-    isDead: false,
+    isDead: true,
   },
 ];
 
@@ -159,25 +159,28 @@ const livingStudents = () => {
   return aliveStudents;
 };
 
-// const dearlyBeloved = (studentId) => {
-//   students.forEach((response) => {
-//     if (response.id === studentId && response.isDead === false) {
-//       return response;
-//     }
-//     return false;
-//   });
-// };
+const dearlyBeloved = () => {
+  const deadStudents = [];
 
-// const followTheLight = (studentId) => {
-//   students.forEach((response) => {
-//     if (response.id === studentId) {
-//       response.isDead = false;
-//     }
-//   });
-// };
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      deadStudents.push(student);
+    }
+  });
+  console.warn(deadStudents);
+  return deadStudents;
+};
+
+const followTheLight = (studentId) => {
+  students.forEach((response) => {
+    if (response.id === studentId) {
+      response.isDead = true;
+    }
+  });
+};
 
 export default {
   livingStudents,
-  // dearlyBeloved,
-  // followTheLight,
+  dearlyBeloved,
+  followTheLight,
 };

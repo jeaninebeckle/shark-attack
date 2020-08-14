@@ -12,7 +12,7 @@ class SharkTank extends React.Component {
     const { livingStudents } = this.props;
 
     const livingStudentCards = livingStudents.map((student) => (
-      <LiveStudent key={student.id} student={student}/>
+      <LiveStudent key={student.studentId} student={student}/>
     ));
 
     return (
@@ -20,6 +20,7 @@ class SharkTank extends React.Component {
         <h2>Live Students</h2>
         <div className="card-columns">
           { livingStudentCards }
+          <button type="button" className="btn btn-danger">Shark Attack</button>
         </div>
       </div>
     );
