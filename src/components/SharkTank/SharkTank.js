@@ -6,13 +6,14 @@ import studentShape from '../../helpers/propTypes/studentShape';
 class SharkTank extends React.Component {
   static propTypes = {
     livingStudents: PropTypes.arrayOf(studentShape.studentShape),
+    eatAStudent: PropTypes.func,
   }
 
   render() {
-    const { livingStudents } = this.props;
+    const { livingStudents, eatAStudent } = this.props;
 
     const livingStudentCards = livingStudents.map((student) => (
-      <LiveStudent key={student.id} student={student}/>
+      <LiveStudent key={student.id} student={student} eatAStudent={eatAStudent}/>
     ));
 
     return (

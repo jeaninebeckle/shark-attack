@@ -1,24 +1,39 @@
 import React from 'react';
 import SharkTank from '../components/SharkTank/SharkTank';
+import Graveyard from '../components/Graveyard/Graveyard';
 import './App.scss';
 import studentsData from '../helpers/data/studentsData';
 
 class App extends React.Component {
   state = {
     livingStudents: [],
+    deadStudents: [],
   }
 
   componentDidMount() {
     const livingStudents = studentsData.livingStudents();
-    this.setState({ livingStudents });
+    const deadStudents = studentsData.dearlyBeloved();
+    this.setState({ livingStudents, deadStudents });
+  }
+
+  eatStudentEvent = (e) => {
+    e.preventDefault();
+    console.warn('made it here');
+    studentsData.sharkAttack();
+    const livingStudents = studentsData.livingStudents();
+    const deadStudents = studentsData.dearlyBeloved();
+    this.setState({ livingStudents, deadStudents });
   }
 
   render() {
-    const { livingStudents } = this.state;
+    const { livingStudents, deadStudents } = this.state;
+
     return (
       <div className="App">
         <h2>SHARK ATTACK</h2>
-        <SharkTank livingStudents={livingStudents}/>
+        <button type="button" className="btn btn-danger" onClick={this.eatStudentEvent}>Shark Attack</button>
+        <SharkTank livingStudents={livingStudents} eatAStudent={this.eatAStudent} />
+        <Graveyard deadStudents={deadStudents} />
       </div>
     );
   }
