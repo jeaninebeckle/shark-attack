@@ -18,9 +18,11 @@ class Graveyard extends React.Component {
 
     return (
       <div className="graveyard">
+      <div className="container">
         <h2>R.I.P.</h2>
-        <div className="card-columns">
+        <div className="row">
           { deadStudentCards }
+        </div>
         </div>
       </div>
     );

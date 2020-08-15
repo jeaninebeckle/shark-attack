@@ -12,9 +12,8 @@ class GraveStone extends React.Component {
     return (
       <div>
       <div className="card">
-        <img className="card-img-top" src={student.imgUrl} alt="student" />
           <div className="card-body">
-          <h3 className="card-text">{student.firstName} {student.lastName} </h3>
+          <h3 className="card-text">{student.firstName}</h3>
         </div>
         </div>
       </div>
