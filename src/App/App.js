@@ -30,8 +30,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h2>SHARK ATTACK</h2>
-        <button type="button" className="btn btn-danger" onClick={this.eatStudentEvent}>Shark Attack</button>
+        <h2>Just when you thought it was safe to go back in the water...</h2>
+        <button className="button" onClick={this.eatStudentEvent}>Shark Attack</button>
         <SharkTank livingStudents={livingStudents} eatAStudent={this.eatAStudent} />
         <Graveyard deadStudents={deadStudents} />
       </div>

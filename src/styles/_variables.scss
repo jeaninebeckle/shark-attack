@@ -1,1 +1,18 @@
 $favColor: rgb(172, 235, 188);
+
+@mixin saw-tooth($width: 12px, $bg: #fff) {
+  background-image:
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(225deg, $bg 50%, transparent 50%),
+    linear-gradient(45deg, $bg 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, transparent 50%),
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(45deg, $bg 50%, transparent 50%),
+    linear-gradient(-135deg, $bg 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, transparent 50%);
+  background-position: top left, top left, bottom left, bottom left, 
+  top left, top left, top right, top right;
+  background-size: $width $width;
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat-y, repeat-y, repeat-y, repeat-y;
+
+}
