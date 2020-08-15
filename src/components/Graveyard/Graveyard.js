@@ -12,7 +12,7 @@ class Graveyard extends React.Component {
     const { deadStudents } = this.props;
 
     const deadStudentCards = deadStudents.map((student) => (
-      <GraveStone key={student.studentId} student={student}/>
+      <GraveStone key={student.id} student={student}/>
     ));
 
     return (

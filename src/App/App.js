@@ -16,17 +16,13 @@ class App extends React.Component {
     this.setState({ livingStudents, deadStudents });
   }
 
-  eatAStudent = (studentId) => {
-    studentsData.followTheLight(studentId);
+  eatStudentEvent = (e) => {
+    e.preventDefault();
+    console.warn('made it here');
+    studentsData.sharkAttack();
     const livingStudents = studentsData.livingStudents();
     const deadStudents = studentsData.dearlyBeloved();
     this.setState({ livingStudents, deadStudents });
-  }
-
-  eatStudentEvent = (e) => {
-    e.preventDefault();
-    const { student, eatAStudent } = this.props;
-    eatAStudent(student.studentId);
   }
 
   render() {

@@ -13,7 +13,7 @@ class SharkTank extends React.Component {
     const { livingStudents, eatAStudent } = this.props;
 
     const livingStudentCards = livingStudents.map((student) => (
-      <LiveStudent key={student.studentId} student={student} eatAStudent={eatAStudent}/>
+      <LiveStudent key={student.id} student={student} eatAStudent={eatAStudent}/>
     ));
 
     return (
