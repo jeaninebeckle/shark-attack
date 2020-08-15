@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LiveStudent from '../LiveStudent/LiveStudent';
 import studentShape from '../../helpers/propTypes/studentShape';
+import './SharkTank.scss';
 
 class SharkTank extends React.Component {
   static propTypes = {
@@ -17,10 +18,12 @@ class SharkTank extends React.Component {
     ));
 
     return (
-      <div>
-        <h2>Live Students</h2>
-        <div className="card-columns">
+      <div className="students">
+        <h2>Dinner Menu</h2>
+        <div className="container">
+        <div className="row">
           { livingStudentCards }
+          </div>
         </div>
       </div>
     );

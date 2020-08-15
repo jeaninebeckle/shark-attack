@@ -1,10 +1,20 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
 
 @import 'variables';
 
 body {
-  background-image: url("https://www.narcity.com/u/2020/03/18/c442fe4cfaeeefdb59ab9b8ed78d8e0a.png_1200x630.png");
-  background-repeat: no-repeat;
-  background-size: auto;
+  font-family: 'Boogaloo', cursive;
+}
+
+.button {
+  background-color: red;
+  height: 60px;
+  width: 200px;
+  font-family: 'Jolly Lodger', cursive;
+  font-size: 2em;
+  @include saw-tooth();
+  margin: 30px;
 }
